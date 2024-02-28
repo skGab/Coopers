@@ -1,0 +1,159 @@
+@use "../../styles/colors";
+@use "../../styles/typography";
+
+.form {
+  &__container {
+    width: 100%;
+    max-width: 700px;
+    height: 721px;
+    position: relative;
+    padding: 8.7rem 6rem 6rem 6rem;
+    margin: 35rem auto 8rem;
+    box-shadow: 1px 2px 30px rgba(128, 128, 128, 0.425);
+
+    @media (max-width: 730px) {
+      padding: 13rem 3rem 3rem 3rem;
+      height: 820px;
+      margin-top: 30rem;
+    }
+
+    // Header
+    .greenDetail {
+      width: 166px;
+      height: 23px;
+      background-color: colors.$verdeClaro;
+      position: absolute;
+      top: -12px;
+      left: 200px;
+
+      @media (max-width: 730px) {
+        left: 100px;
+      }
+    }
+
+    .position {
+      position: absolute;
+      top: -100px;
+      left: 270px;
+
+      // @media (max-width: 1008px) {
+      //   width: 120%;
+      // }
+
+      @media (max-width: 730px) {
+        left: 150px;
+        top: -70px;
+        width: 35%;
+      }
+    }
+
+    button {
+      width: 100%;
+      background-color: colors.$verdeClaro;
+      color: colors.$branco;
+      font-weight: 700;
+      font-size: 1.8rem;
+      letter-spacing: 0.2rem;
+      padding: 1.6rem 0;
+      border-radius: 5px;
+      border: none;
+      font-family: typography.$montSerrantFont;
+      cursor: pointer;
+    }
+  }
+
+  // Icon and Title
+  &__getInTouch {
+    display: flex;
+
+    h3 {
+      margin-left: 2.4rem;
+      font-size: 2.4rem;
+      font-weight: lighter;
+      max-width: 100px;
+
+      span {
+        font-weight: 700;
+      }
+    }
+  }
+
+  // Form
+  &__block {
+    margin-top: 4rem;
+
+    label {
+      font-size: 1.6rem;
+      font-weight: 400;
+      display: block;
+      margin-bottom: 0.8rem;
+    }
+
+    // Inputs
+    input {
+      width: 100%;
+      padding: 1.5rem 0 1.5rem 1.6rem;
+      border-radius: 5px;
+      outline: none;
+      border: 0.5px solid #06152b;
+      margin-bottom: 0.8rem;
+    }
+
+    .error {
+      font-size: 1.3rem;
+      color: rgb(241, 28, 28);
+      margin-left: 1rem;
+      margin-top: 2rem;
+    }
+
+    .sentMessage {
+      font-size: 2rem;
+      color: colors.$verdeClaro;
+      font-weight: bold;
+      letter-spacing: 0.1rem;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: #9a9a9a;
+      font-size: 1.4rem;
+      font-family: typography.$montSerrantFont;
+    }
+  }
+  // Spaces
+  &__emailTelephone {
+    display: flex;
+    justify-content: space-between;
+
+    @media (max-width: 730px) {
+      flex-direction: column;
+    }
+
+    .size {
+      width: 48%;
+
+      @media (max-width: 730px) {
+        width: 100%;
+      }
+    }
+  }
+
+  &__name,
+  &__emailTelephone {
+    margin-bottom: 2.4rem;
+  }
+
+  &__message {
+    margin-bottom: 4rem;
+    // Message camp
+    textarea {
+      border-radius: 5px;
+      width: 100%;
+      padding: 1.5rem;
+      height: 150px;
+      outline: none;
+      border: 0.5px solid #06152b;
+      margin-bottom: 0.8rem;
+    }
+  }
+}

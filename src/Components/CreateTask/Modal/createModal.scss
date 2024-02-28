@@ -1,0 +1,65 @@
+@use "../../../styles/typography";
+@use "../../../styles/colors";
+
+.modalTask {
+  // Modal Block
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    .modalTask {
+      display: flex;
+      flex-direction: column;
+      border-radius: 30px;
+      padding: 1.5rem 3.5rem 4rem 4rem;
+      top: 200px;
+      width: fit-content;
+      position: fixed;
+      background-color: rgba(0, 0, 0, 0.733);
+      z-index: 1;
+    }
+  }
+
+  &__close {
+    color: rgb(235, 125, 0);
+    align-self: flex-end;
+    font-size: 1.5em;
+    font-weight: bold;
+    font-family: typography.$poppinsFont;
+    cursor: pointer;
+    margin-bottom: 1rem;
+  }
+
+  // Task Fild
+  &__newTask {
+    display: flex;
+    align-items: center;
+    input {
+      padding: 1rem 2.5rem;
+      border-radius: 20px;
+      font-size: 2rem;
+      background-color: colors.$verdeClaro;
+      outline: none;
+      border: none;
+      box-shadow: 2px 4px 5px black;
+      color: colors.$branco;
+    }
+    input::placeholder {
+      font-size: 2rem;
+      color: colors.$branco;
+      letter-spacing: 0.1rem;
+    }
+  }
+
+  // Send Button
+  &__button {
+    width: 35px;
+    height: 35px;
+    background-color: colors.$verdeClaro;
+    border-radius: 20px;
+    margin-left: 2rem;
+    box-shadow: 2px 4px 5px black;
+    cursor: pointer;
+  }
+}

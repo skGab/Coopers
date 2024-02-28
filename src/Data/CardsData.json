@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "img": "/bitmap.png",
+    "description": "Organize your daily job enhance your life performance"
+  },
+  {
+    "id": 2,
+    "img": "/bitmap2.png",
+    "description": "Mark one activity as done makes your brain understands the power of doing."
+  },
+  {
+    "id": 3,
+    "img": "/bitmap3.png",
+    "description": "Careful with missunderstanding the difference between a list of things and a list of desires."
+  },
+  {
+    "id": 4,
+    "img": "/bitmap.png",
+    "description": "Careful with missunderstanding the difference between a list of things and a list of desires."
+  },
+  {
+    "id": 5,
+    "img": "/bitmap2.png",
+    "description": "Careful with missunderstanding the difference between a list of things and a list of desires."
+  },
+  {
+    "id": 6,
+    "img": "/bitmap3.png",
+    "description": "Careful with missunderstanding the difference between a list of things and a list of desires."
+  }
+]

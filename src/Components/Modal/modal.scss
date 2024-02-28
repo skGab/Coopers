@@ -1,0 +1,168 @@
+@use "../../styles/colors";
+@use "../../styles/typography";
+
+.modal {
+  &__container {
+    display: flex;
+    justify-content: center;
+    .modal {
+      top: 30px;
+      position: fixed;
+      width: 65%;
+      max-width: 1000px;
+      background-color: colors.$branco;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 3rem 3rem 8rem 3rem;
+      border-radius: 5px;
+      box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.432);
+
+      @media (max-width: 730px) {
+       top: 20px;
+      }
+    }
+
+    img {
+      position: absolute;
+      left: 5px;
+      top: 100px;
+      z-index: -2;
+    }
+
+    .backdrop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.884);
+      z-index: 1;
+    }
+  }
+
+  &__close {
+    font-size: 1.6rem;
+    font-weight: 700;
+    align-self: flex-end;
+    cursor: pointer;
+  }
+
+  // MODAL HEADER
+  &__header {
+    margin-top: 10rem;
+    margin-left: 6rem;
+
+    h1 {
+      max-width: 600px;
+      font-size: 6.5rem;
+      font-weight: 700;
+      line-height: 50px;
+      span {
+        font-weight: lighter;
+        font-size: 4.5rem;
+        color: colors.$verdeClaro;
+      }
+    }
+  }
+
+  // FORM
+  &__form {
+    width: 40%;
+    margin-top: 8rem;
+    display: flex;
+    flex-direction: column;
+
+    label {
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin-bottom: 0.7rem;
+    }
+
+    input {
+      width: 100%;
+      height: 40px;
+      border-radius: 5px;
+      border: 1px solid rgba(0, 0, 0, 0.377);
+      outline: none;
+      padding: 1rem;
+      font-size: 1.5rem;
+      font-family: typography.$poppinsFont;
+    }
+
+    .error {
+      font-size: 1.3rem;
+      color: rgb(241, 28, 28);
+      margin-left: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .reSize {
+      margin-top: 2rem;
+    }
+
+    button {
+      margin: 5rem auto 0 auto;
+      width: 85%;
+      padding: 1.6rem;
+      background-color: colors.$verdeClaro;
+      columns: colors.$branco;
+      font-size: 2rem;
+      border-radius: 5px;
+      border: none;
+      box-shadow: 1px 2px 4px black;
+      cursor: pointer;
+      color: colors.$branco;
+      letter-spacing: 0.2rem;
+    }
+  }
+}
+
+@media (max-width: 733px) {
+  .modal {
+    &__container {
+      img {
+        width: 85%;
+        top: 170px;
+        left: 40px;
+      }
+      .modal {
+        width: 100wh;
+        height: 95%;
+      }
+    }
+
+    &__header {
+      margin: 6rem auto 0 auto;
+      h1 {
+        width: 700px;
+        font-size: 6.5rem;
+        
+        span{
+          font-size: 3.9rem;
+        }
+       
+      }
+    }
+
+    &__form {
+      width: 95%;
+
+      button{
+        margin-top: 7rem;
+      }
+    }
+    
+  }
+}
+
+@media (max-width: 1008px) {
+  .modal {
+    &__container {
+      .modal {
+        width: 95%;
+      }
+    }
+  }
+}

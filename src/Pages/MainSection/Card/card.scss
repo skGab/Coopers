@@ -1,0 +1,115 @@
+@use "../../../styles/colors";
+@use "../../../styles/typography";
+
+.card {
+  // Container
+  &__container {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    width: 100%;
+    max-width: 380px;
+    text-align: center;
+
+    @media (max-width: 730px) {
+      margin: 0;
+    }
+
+    h3 {
+      font-size: 4rem;
+      margin-top: 2.5rem;
+      font-family: typography.$poppinsFont;
+
+      @media (max-width: 730px) {
+       font-size: 3.5rem;
+      }
+    }
+
+    p {
+      margin: 0 auto;
+      max-width: 200px;
+      font-size: 2.4rem;
+      color: colors.$preto;
+      margin-bottom: 3rem;
+
+      @media (max-width: 1008px) {
+      }
+  
+      @media (max-width: 730px) {
+        max-width: 300px;
+      }
+    }
+
+    .newP {
+      max-width: 300px !important;
+
+      span {
+        font-weight: 700;
+      }
+    }
+  }
+
+  &__colorDetail {
+    width: 100%;
+    height: 20px;
+    background-color: colors.$laranja;
+  }
+
+  //Tasks
+  &__tasks {
+    padding: 0 2.5rem;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .flexAdjust {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__checkBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1.5rem;
+    border-radius: 50%;
+    height: 24px;
+    width: 24px;
+    border: 2px solid colors.$laranja;
+    cursor: pointer;
+  }
+
+  &__task {
+    text-align: left;
+    max-width: 220px;
+    font-size: 1.6rem;
+    word-wrap: break-word;
+  }
+
+  &__delete {
+    color: #999999;
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+  }
+}
+
+// Done tasks
+.activeTitle {
+  font-weight: 700;
+  transform: 0.5s;
+}
+
+.green {
+  background-color: colors.$verdeClaro;
+}
+
+.greenBorder {
+  border: 2px solid colors.$verdeClaro;
+}
+
+.greyBorder {
+  border: 2px solid colors.$cinza;
+}

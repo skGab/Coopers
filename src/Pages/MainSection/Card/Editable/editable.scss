@@ -1,0 +1,18 @@
+@use "../../../../styles/typography";
+
+.Editable {
+  div {
+    input {
+      background: none;
+      border: none;
+      font-family: typography.$montSerrantFont;
+      font-size: 1.6rem;
+      outline: none;
+    }
+
+    input::placeholder {
+      color: #e38d3f;
+      font-size: 1.6rem;
+    }
+  }
+}
