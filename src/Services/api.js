@@ -3,7 +3,7 @@ import axios from 'axios';
 let baseURL;
 
 if (process.env.NODE_ENV === 'production') {
-  baseURL = 'https://go-api-bpdc.onrender.com';
+  baseURL = process.env.GO_API_URL;
 } else {
   baseURL = 'http://localhost:8080';
 }
