@@ -3,7 +3,7 @@ import axios from 'axios';
 let baseURL;
 
 if (process.env.NODE_ENV === 'production') {
-  baseURL = 'https://todo-api-l2m5.onrender.com';
+  baseURL = 'https://go-api-bpdc.onrender.com';
 } else {
   baseURL = 'http://localhost:8080';
 }
