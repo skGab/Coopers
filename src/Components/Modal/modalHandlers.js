@@ -6,7 +6,7 @@ export const handleSignUp = async (
   registerUser,
   resetErrorStatesAndCloseModal
 ) => {
-  const userExists = userInfo.some((user) => isValid.user === user.user);
+  const userExists = userInfo.some((user) => isValid.User === user.User);
   if (userExists) {
     setUserError('This user is already being used');
   } else {
