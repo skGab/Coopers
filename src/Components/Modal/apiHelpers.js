@@ -16,7 +16,8 @@ export const getUsers = async (setUsersInfo) => {
     const data = await api.get('/users');
     setUsersInfo(data.data);
   } catch (error) {
-    console.error('Error fetching users:', error);
+    console.error('Error fetching users:', error.message);
+    return error
   }
 };
 

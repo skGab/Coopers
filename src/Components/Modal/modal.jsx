@@ -15,12 +15,20 @@ const Modal = ({ showModal, setShowModal, name, setErrorMessage }) => {
   const [passwordError, setPasswordError] = useState(null);
   const [userError, setUserError] = useState(null);
   const [usersInfo, setUsersInfo] = useState([]);
+  const [fetchError, setFetchError] = useState(false);
 
   const { setAuthentication, setUser, setAllTasks } = useContext(userContext);
 
-  useEffect(() => {
+  useEffect(async () => {
     if (showModal) {
-      getUsers(setUsersInfo);
+      const error = await getUsers(setUsersInfo);
+
+      if (error != null) {
+        if (error.response.status == 500) {
+          setFetchError(true);
+        }
+      }
+     
     }
   }, [showModal]);
 
@@ -118,12 +126,15 @@ const Modal = ({ showModal, setShowModal, name, setErrorMessage }) => {
               <label>User:</label>
               <input name='user' type='text' />
               {userError && <span className='error'>{userError}</span>}
-
               <label className='reSize'>Password:</label>
               <input type='password' name='password' />
               {passwordError && <span className='error'>{passwordError}</span>}
 
-              <button>{name === 'sign-in' ? 'Sign in' : 'Sign up'}</button>
+              {fetchError ? (
+                <button disabled>Under maintenance</button>
+              ) : (
+                <button>{name === 'sign-in' ? 'Sign in' : 'Sign up'}</button>
+              )}
             </form>
           </motion.div>
         </div>
@@ -133,4 +144,3 @@ const Modal = ({ showModal, setShowModal, name, setErrorMessage }) => {
 };
 
 export default Modal;
-
